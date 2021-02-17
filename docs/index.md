@@ -17,3 +17,5 @@ También será necesario tener una cuenta de Github ya que será donde volcaremo
 ## 3. Desarrollo de la práctica
 
 ### 3.1 Conectandose por primera vez al IaaS
+Lo primero que haremos será conectarnos a la página web del [IaaS](iaas.ull.es). Recordemos que es necesario tener configurada la VPN para establecer conexión tanto con la web como con nuestra máquina. En caso de no haberlo hecho revise el apartado de **Requisitos previos**.
+Una vez entramos en la página, introducimos nuestras credenciales institucionales y se nos mostrará una intefaz con las máquinas que hemos creado o tenemos disponibles. Seleccionamos la que pone **DSI** y le damos a ejecutar.
