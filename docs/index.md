@@ -52,3 +52,15 @@ sudo reboot
 ```
 
 
+Ahora vamos a dejar de lado momentaneamente la VM del IaaS para trabajar en nuestro PC local. Algo muy cómodo sería usar el comando SSH y que se conectara automáticamente sin necesidad de tener que poner la contraseña. Eso es precisamente lo que haremos.
+Lo primero es revisar si en algún momento ya hemos generado una clave.
+```bash
+cat .ssh/id_rsa.pub 
+```
+Si tenemos un output que empieza por **ssh-rsa** significa que en algún momento ya generamos esa clave y no es necesario hacer otra. Si por el contrario obtenemos un error, debemos generar una clave ssh.
+Para generar la clave ejecutamos el siguiente comando: 
+```bash
+ssh-keygen
+```
+Es importante que usemos los **parametros por defecto** asi que simplemente daremos **enter / intro** hasta que finalice.
+
