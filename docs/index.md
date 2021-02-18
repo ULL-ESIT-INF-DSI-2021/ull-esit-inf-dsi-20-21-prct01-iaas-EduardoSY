@@ -46,4 +46,9 @@ Como podemos observar parece que no ha habido ningún cambio. Para que las modif
 sudo apt update
 sudo apt upgrade
 ```
+Una vez finalizados podemos reiniciar
+```bash
+sudo reboot
+```
+
 
