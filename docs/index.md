@@ -20,7 +20,7 @@ También será necesario tener una cuenta de Github ya que será donde volcaremo
 Lo primero que haremos será conectarnos a la página web del [IaaS](iaas.ull.es). Recordemos que es necesario tener configurada la VPN para establecer conexión tanto con la web como con nuestra máquina. En caso de no haberlo hecho revise el apartado de **Requisitos previos**.
 Una vez entramos en la página, introducimos nuestras credenciales institucionales y se nos mostrará una intefaz con las máquinas que hemos creado o tenemos disponibles. Seleccionamos la que pone **DSI** y le damos a ejecutar. Cuando esté lista se nos agregará una máquina con un número de sufijo.
 Accedemos a ella y veremos una pantalla como la que se muestra a continuación.
-![Imagen IaaS][img/iaas_UI]
+![Imagen IaaS](img/iaas_UI)
 Aquí nos tenemos que fijar en la parte que pone **Direccion IP**. Esa será la dirección de nuestra máquina y la que usaremos para conectarnos.
 Abrimos una terminal y nos conectamos por SSH. Introducimos la dirección que tenga nuestra máquina.
 En mi caso es:
