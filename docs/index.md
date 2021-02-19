@@ -78,3 +78,13 @@ Vamos a comprobar que tenemos **git** instalado. En teoría está instalado por 
 sudo apt install git
 ```
 Aquí nos va a decir si está instalado o no y si tenemos la versión más reciente. En nuestro caso todo está correcto.
+Lo siguiente es configurar Git para que el trabajo que hagamos esté identificado con nuestros datos.
+Podemos hacer una configuración más amplia y completa pero lo principal que debemos hacer es:
+```bash
+git config --global user.name "Eduardo Da Silva"
+git config --global user.email alu0101104911@ull.edu.es
+```
+Verificamos que lo hemos puesto correctamente con:
+```bash
+git config --list
+```
