@@ -63,4 +63,18 @@ Para generar la clave ejecutamos el siguiente comando:
 ssh-keygen
 ```
 Es importante que usemos los **parametros por defecto** asi que simplemente daremos **enter / intro** hasta que finalice.
+Ahora solo falta pasar esta clave desde nuestra máquina local a la máquina de IaaS. Para ello usamos:
+```bash
+ssh-copy-id usuario@10.6.131.65
+```
+Ya tenemos nuestro "token de autentificación" en la máquina virtual y podemos iniciar una conexión SSH sin necesidad de poner la contraseña.
 
+### 3.2 Instalación Git
+
+Antes de comenzar con Git vamos a generar una clave pública-privada en nuestra VM del IaaS. Lo haremos siguiendo los pasos anteriores pero sin pasar la clavea ninguna máquina más. Una vez generamos la key no hacemos nada más.
+
+Vamos a comprobar que tenemos **git** instalado. En teoría está instalado por defecto en las máquinas de IaaS. Podemos verificarlo escribiendo "git" en la consola y observando cómo se nos despliega una ayuda o utiizando el comando:
+```bash
+sudo apt install git
+```
+Aquí nos va a decir si está instalado o no y si tenemos la versión más reciente. En nuestro caso todo está correcto.
