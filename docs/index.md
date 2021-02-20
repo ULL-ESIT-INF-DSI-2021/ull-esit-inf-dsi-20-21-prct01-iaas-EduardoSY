@@ -69,7 +69,7 @@ ssh-copy-id usuario@10.6.131.65
 ```
 Ya tenemos nuestro "token de autentificación" en la máquina virtual y podemos iniciar una conexión SSH sin necesidad de poner la contraseña.
 
-### 3.2 Instalación Git
+### 3.2 Instalación Git y configuración
 
 Antes de comenzar con Git vamos a generar una clave pública-privada en nuestra VM del IaaS. Lo haremos siguiendo los pasos anteriores pero sin pasar la clavea ninguna máquina más. Una vez generamos la key no hacemos nada más.
 
@@ -87,4 +87,15 @@ git config --global user.email alu0101104911@ull.edu.es
 Verificamos que lo hemos puesto correctamente con:
 ```bash
 git config --list
+```
+Ahora vamos a modificar el prompt de la terminal para que nos muestre en la rama actual en la que nos encontramos del repositorio. Para ello debemos descargarnos el script [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) (también podemos simplemente copiar el código del script y pegarlo en un fichero que creemos) en nuestra máquina del IaaS.
+Seguimos los siguientes pasos:
+```bash
+mv git-prompt.sh .git-prompt.sh
+vim .bashrc
+```
+Y añadimos al final del fichero **.bashrc** estas dos líneas:
+```
+source ~/.git-prompt.sh
+PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
 ```
