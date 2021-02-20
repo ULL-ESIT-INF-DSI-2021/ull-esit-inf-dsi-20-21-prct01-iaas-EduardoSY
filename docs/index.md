@@ -8,7 +8,7 @@ En esta primera práctica de la asignatura de Desarrollo de Sistemas Informátic
 1. Configurar nuestra máquina virtual del IaaS
 2. Configurar nuestra conexión SSH con la máquina del IaaS
 3. Instalar y configurar la conexión con Github
-4. Instalar Node.js 
+4. Instalar nvm (gestor de versiones de Node.js)
 
 ## 2. Requisitos previos
 Para poder realizar esta primera práctica (y todas las que continuan) necesitamos conectarnos a la web del [IaaS](iaas.ull.es). Para ello es necesario utilizar una VPN para poder acceder. Si al acceder al sitio web nos sale un error de "No se puede acceder al sitio" o similar, probablemente no estemos conectados a la VPN. Si no sabemos como hacerlo podemos seguir la guía para [Configurar VPN ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/).
@@ -99,3 +99,32 @@ Y añadimos al final del fichero **.bashrc** estas dos líneas:
 source ~/.git-prompt.sh
 PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
 ```
+Comprobamos que está modificado correctamente y aplicamos los cambios.
+```bash
+tail .bashrc
+//Debemos ver las dos lineas que acabamos de añadir al final
+
+exec bash -l
+```
+Ahora ya vemos que el prompt tiene una forma distinta.
+Vamos a comprobar que todo funciona correctamente. Es decir, que nos indica en cada momento en que rama del repositorio estamos. 
+Antes de clonar un repositorio vamos a añadir la clave SSH que hemos generado a nuestra cuenta de Github. 
+Para ello lo primero es copiarla del fichero **id_rsa.pub**.
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+Copiamos la salida y abrimos nuestra cuenta de Github. Accedemos a **configuración** y accedemos al apartado de **SSH and GPG keys**. Ahí debemos darle a **"New SSH key"** y pegamos nuestra clave.
+Ahora clonemos un repositorio para verificar que todo este correcto.
+```bash
+git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
+```
+Si accedemos al repositorio que acabamos de clonar deberiamos ver cómo cambia el prompt.
+
+### 3.2 Instalación Node Version Manager (nvm)
+Vamos a instalar nvm.
+```bash
+$wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+exec bash -l
+nvm --version
+```
+El resultado del último comando nos debería decir que es la versión **0.37.2**
