@@ -213,6 +213,7 @@ nvm use v15.8.0
 ...$ node --version
 ...$ npm --version
 ```
+
 ![Imagen Listado nvm](img/list_nvm.jpg)
 
 ## 4. Conclusión
