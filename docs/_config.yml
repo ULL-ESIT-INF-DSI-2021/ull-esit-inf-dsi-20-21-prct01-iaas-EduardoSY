@@ -4,7 +4,7 @@ autor: Eduardo Da Silva Yanes
 theme: jekyll-theme-midnight
 font:
   enable: true
-  
+  host: //fonts.googleapis.com
   headings:
     external: true
     family: Lato
