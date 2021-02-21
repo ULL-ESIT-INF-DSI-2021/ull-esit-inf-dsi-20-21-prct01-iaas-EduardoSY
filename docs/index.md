@@ -8,7 +8,7 @@ En esta primera práctica de la asignatura de Desarrollo de Sistemas Informátic
 1. Configurar nuestra máquina virtual del IaaS
 2. Configurar nuestra conexión SSH con la máquina del IaaS
 3. Instalar y configurar la conexión con Github
-4. Instalar nvm (gestor de versiones de Node.js)
+4. Instalar nvm (gestor de versiones de Node.js) y Node.js
 
 ## 2. Requisitos previos
 Para poder realizar esta primera práctica (y todas las que continuan) necesitamos conectarnos a la web del [IaaS](iaas.ull.es). Para ello es necesario utilizar una VPN para poder acceder. Si al acceder al sitio web nos sale un error de "No se puede acceder al sitio" o similar, probablemente no estemos conectados a la VPN. Si no sabemos como hacerlo podemos seguir la guía para [Configurar VPN ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/).
