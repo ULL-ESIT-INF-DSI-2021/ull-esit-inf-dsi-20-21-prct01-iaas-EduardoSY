@@ -168,7 +168,7 @@ De manera general este tipo de prácticas son muy **útiles** ya que nos permite
 
 Así mismo, como **futuros ingenieros informáticos**, aprender a tener un entorno de trabajo **cómodo** y **óptimo** para desarrollar nuestras labor es álgo fundamental.
 ## 5. Recursos y Webgrafía
-* **[Guión Práctica 1 DSI]()**: Guión de la asignatura donde detalla el desarrollo de la práctica 1.
+* **[Guión Práctica 1 DSI](https://ull-esit-inf-dsi-2021.github.io/prct01-iaas/)**: Guión de la asignatura donde detalla el desarrollo de la práctica 1.
 * **[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)**: Guía de Github sobre Markdown.
 * **[VincentTam _config.yml on Github](https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml)**: Archivo _config.yml con explicaciones de los parámetros para entender mejor que contiene el fichero.
 * **[Servicio VPN ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/)**: Web de la Universidad de La Laguna donde se explica como acceder a la VPN de la institución.
