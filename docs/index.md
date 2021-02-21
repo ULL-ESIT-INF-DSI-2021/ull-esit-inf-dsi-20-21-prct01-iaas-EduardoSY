@@ -27,7 +27,7 @@ Abrimos una terminal y nos conectamos por SSH. Introducimos la dirección que te
 
 En mi caso es:
 ```bash
-ssh usuario@10.6.131.65
+...$ ssh usuario@10.6.131.65
 ```
 ![Imagen Primer ssh](img/ssh.jpg)
 Es la primera vez que nos conectamos asi que nos aparecerá un mensaje al que debemos responder afirmativamente. Las credenciales están por defecto asi que nuestra contraseña es "usuario". 
@@ -38,7 +38,7 @@ Una vez hemos establecido conexión el sistema nos obliga a establecer una contr
 Lo siguiente que hacemos es personalizar un poco el nombre de la máquina. En lugar de que nos salga "Ubuntu" en el prompt, vamos a hacer que se muestre el nombre de nuestra máquina. En mi caso pondré **iaas-dsi44** ya que mi máquina es la numero 44.
 Para hacer este cambio modificamos el fichero _**/etc/hostname**_ y sustituimos el nombre "Ubuntu" por "iaas-dsi44"
 ```bash
-sudo vim /etc/hostname
+...$ sudo vim /etc/hostname
 ```
 También vamos a cambiar el nombre de host de "Ubuntu" por iaas-dsi44. Para ello modificamos el fichero _**/etc/hosts**_. Simplemente sustituimos el nombre de "Ubuntu" por el de iaas-dsi44.
 
@@ -48,29 +48,29 @@ También vamos a cambiar el nombre de host de "Ubuntu" por iaas-dsi44. Para ello
 Como podemos observar parece que no ha habido ningún cambio. Para que las modificaciones que hemos hecho tengan efecto debemos reiniciar el sistema. Pero antes de eso vamos a aprovechar a actualizar y poner todo al día.
 
 ```bash
-sudo apt update
-sudo apt upgrade
+...$ sudo apt update
+...$ sudo apt upgrade
 ```
 Una vez finalizados podemos reiniciar
 ```bash
-sudo reboot
+...$ sudo reboot
 ```
 
 
 Ahora vamos a dejar de lado momentaneamente la VM del IaaS para trabajar en nuestro PC local. Algo muy cómodo sería usar el comando SSH y que se conectara automáticamente sin necesidad de tener que poner la contraseña. Eso es precisamente lo que haremos.
 Lo primero es revisar si en algún momento ya hemos generado una clave.
 ```bash
-cat .ssh/id_rsa.pub 
+...$ cat .ssh/id_rsa.pub 
 ```
 Si tenemos un output que empieza por **ssh-rsa** significa que en algún momento ya generamos esa clave y no es necesario hacer otra. Si por el contrario obtenemos un error, debemos generar una clave ssh.
 Para generar la clave ejecutamos el siguiente comando: 
 ```bash
-ssh-keygen
+...$ ssh-keygen
 ```
 Es importante que usemos los **parametros por defecto** asi que simplemente daremos **enter / intro** hasta que finalice.
 Ahora solo falta pasar esta clave desde nuestra máquina local a la máquina de IaaS. Para ello usamos:
 ```bash
-ssh-copy-id usuario@10.6.131.65
+...$ ssh-copy-id usuario@10.6.131.65
 ```
 Ya tenemos nuestro "token de autentificación" en la máquina virtual y podemos iniciar una conexión SSH sin necesidad de poner la contraseña.
 
@@ -80,24 +80,24 @@ Antes de comenzar con Git vamos a generar una clave pública-privada en nuestra 
 
 Vamos a comprobar que tenemos **git** instalado. En teoría está instalado por defecto en las máquinas de IaaS. Podemos verificarlo escribiendo "git" en la consola y observando cómo se nos despliega una ayuda o utiizando el comando:
 ```bash
-sudo apt install git
+...$ sudo apt install git
 ```
 Aquí nos va a decir si está instalado o no y si tenemos la versión más reciente. En nuestro caso todo está correcto.
 Lo siguiente es configurar Git para que el trabajo que hagamos esté identificado con nuestros datos.
 Podemos hacer una configuración más amplia y completa pero lo principal que debemos hacer es:
 ```bash
-git config --global user.name "Eduardo Da Silva"
-git config --global user.email alu0101104911@ull.edu.es
+...$ git config --global user.name "Eduardo Da Silva"
+...$ git config --global user.email alu0101104911@ull.edu.es
 ```
 Verificamos que lo hemos puesto correctamente con:
 ```bash
-git config --list
+...$ git config --list
 ```
 Ahora vamos a modificar el prompt de la terminal para que nos muestre en la rama actual en la que nos encontramos del repositorio. Para ello debemos descargarnos el script [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) (también podemos simplemente copiar el código del script y pegarlo en un fichero que creemos) en nuestra máquina del IaaS.
 Seguimos los siguientes pasos:
 ```bash
-mv git-prompt.sh .git-prompt.sh
-vim .bashrc
+...$ mv git-prompt.sh .git-prompt.sh
+...$ vim .bashrc
 ```
 Y añadimos al final del fichero **.bashrc** estas dos líneas:
 ```
@@ -106,22 +106,22 @@ PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git 
 ```
 Comprobamos que está modificado correctamente y aplicamos los cambios.
 ```bash
-tail .bashrc
+...$ tail .bashrc
 //Debemos ver las dos lineas que acabamos de añadir al final
 
-exec bash -l
+...$ exec bash -l
 ```
 Ahora ya vemos que el prompt tiene una forma distinta.
 Vamos a comprobar que todo funciona correctamente. Es decir, que nos indica en cada momento en que rama del repositorio estamos. 
 Antes de clonar un repositorio vamos a añadir la clave SSH que hemos generado a nuestra cuenta de Github. 
 Para ello lo primero es copiarla del fichero **id_rsa.pub**.
 ```bash
-cat ~/.ssh/id_rsa.pub
+...$ cat ~/.ssh/id_rsa.pub
 ```
 Copiamos la salida y abrimos nuestra cuenta de Github. Accedemos a **configuración** y accedemos al apartado de **SSH and GPG keys**. Ahí debemos darle a **"New SSH key"** y pegamos nuestra clave.
 Ahora clonemos un repositorio para verificar que todo este correcto.
 ```bash
-git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
+...$ git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
 ```
 Si accedemos al repositorio que acabamos de clonar deberiamos ver cómo cambia el prompt.
 
@@ -135,17 +135,24 @@ nvm --version
 El resultado del último comando nos debería decir que es la versión **0.37.2**
 Ahora vamos a instalar la versión **más reciente** de **Node.js**
 ```bash
-$ nvm install node
-$ node --version
+...$ nvm install node
 
-$ npm --version
+//Comprobamos las versiones 
+...$ node --version
+...$ npm --version
 ```
+![Imagen Instalar version Node.js](img/install_node.jpg)
+
 Si en lugar de la más reciente queremos instalar otra versión debemos hacer lo siguiente:
 ```bash
-$ nvm install 12.0.0
-$ node --version
-$ npm --version
+...$ nvm install 12.0.0
+
+//Comprobamos las versiones 
+...$ node --version
+...$ npm --version
 ```
+![Imagen Instalar version Node.js](img/install_node_v2.jpg)
+
 En nuestro caso hemos instalado la versión 12.0.0 pero podemos instalar cualquier otra versión disponible.
 Finalmente, si queremos cambiar de versión gracias al nvm lo que debemos hacer es:
 1. Listar las versiones que tenemos instaladas
@@ -158,10 +165,11 @@ nvm use v15.8.0
 ```
 3. Comprobar que se ha seleccionado correctamente
 ```bash
-...$ nvm install 12.0.0
+...$ nvm use v15.8.0 
 ...$ node --version
 ...$ npm --version
 ```
+![Imagen Listado nvm](img/list_nvm.jpg)
 
 ## 4. Conclusión
 De manera general este tipo de prácticas son muy **útiles** ya que nos permite establecer un **entorno de trabajo estandar para todos los alumnos** de tal manera que todos podamos trabajar en las mismas condiciones y evitar errores o contratiempos. Además nos sirve como punto de partida para saber qué necesitamos para la asignatura y nos da pie a trabajar, en caso de que no lo hayamos hecho antes, con VPN, git, Github, conexiónes remotas, etc.
