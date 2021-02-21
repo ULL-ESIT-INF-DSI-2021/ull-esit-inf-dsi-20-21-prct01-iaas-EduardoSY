@@ -25,6 +25,8 @@ Accedemos a ella y veremos una pantalla como la que se muestra a continuación.
 ![Imagen IaaS](img/iaas_UI.PNG)
 Aquí nos tenemos que fijar en la sección **Detalles** en la parte que pone **Direccion IP**. Esa será la dirección de nuestra máquina y la que usaremos para conectarnos.
 Abrimos una terminal y nos conectamos por SSH. Introducimos la dirección que tenga nuestra máquina.
+![Imagen IaaS detalles](img/iaas_UI_detalles.jpg)
+
 En mi caso es:
 ```bash
 ssh usuario@10.6.131.65
