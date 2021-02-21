@@ -169,7 +169,7 @@ Ahora clonemos un repositorio para verificar que todo este correcto.
 Si accedemos al repositorio que acabamos de clonar deberiamos ver cómo cambia el prompt.
 ![Imagen Cambio Prompt](img/comprueba_prompt.jpg)
 
-### 3.2 Instalación Node Version Manager (nvm)
+### 3.3 Instalación Node Version Manager (nvm) y Node.js
 Vamos a instalar nvm.
 ```bash
 $wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
