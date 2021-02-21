@@ -2,6 +2,14 @@
 * Universidad de La Laguna
 * Eduardo Da Silva Yanes 
 
+## Nota aclaratoria
+Durante el informe vamos a ver textos e instrucciones que corresponden a comandos de consola. Los comandos que deben ser introducidos en consola van precedidos de **...$** haciendo referencia al prompt. Los comentarios aclarativos tienen, al igual que muchos lenguajes de programación, **//** antes del comentario. Finalmente, si hay un texto sin ninguna de estas cosas debe ser interpretado como eso, un texto, que puede debe ser escrito o leido según corresponda.
+```bash
+...$ ESTO CORRESPONDE A COMANDOS
+// ESTO CORRESPONDE A COMENTARIOS ACLARATIVOS
+ESTO CORRESPONDE A TEXTO DE ENTRADA O SALIDA (Depende del contexto)
+```
+
 ## 1. Introduccion
 En esta primera práctica de la asignatura de Desarrollo de Sistemas Informáticos debemos configurar nuestra máquina virtual alojada en el IaaS con la que haremos las prácticas. Configuraremos tanto en entorno de la máquina, instalando y configurando git y Node.js y la conexión ssh.
 ### Objetivos
@@ -103,7 +111,7 @@ Host iaas-dsi44
 En el campo *Host* ponemos el nombre por el que llamaremos a esa conexión. En **Hostname** ponemos la IP de la conexión pero como anteriormente, en el fichero /etc/hosts/ habiamos llamado "iaas-dsi44" a la IP podemos poner ese nombre. Ambas opciones son igualmente válidas.
 ![Imagen SSH config](img/ssh_config.jpg)
 
-Ahora, cuando querramos hacer una conexión SSH solo debemos ejecutar:
+Ahora, cuando querramos hacer una conexión SSH, solo debemos ejecutar:
 ```bash
 ...$ ssh iaas-dsi44
 ```
