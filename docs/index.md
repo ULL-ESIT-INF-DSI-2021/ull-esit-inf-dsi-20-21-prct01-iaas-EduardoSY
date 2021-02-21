@@ -57,12 +57,24 @@ Una vez finalizados podemos reiniciar
 ```
 
 
-Ahora vamos a dejar de lado momentaneamente la VM del IaaS para trabajar en nuestro PC local. Algo muy cómodo sería usar el comando SSH y que se conectara automáticamente sin necesidad de tener que poner la contraseña. Eso es precisamente lo que haremos.
+Ahora vamos a dejar de lado momentaneamente la VM del IaaS para trabajar en nuestro PC local. Es posible que alguna vez nos se nos olvide o dudemos en cual era la ip de nuestra máquina virtual. Para evitar tener que recordarla podemos añadirla al fichero **/etc/hosts**.
+```bash
+...$ sudo vi /etc/hosts
+
+//Añado debajo del host local de mi máquina la IP de la máquina virtual.
+//En mi caso añado la linea:
+10.6.131.65   iaas-dsi44
+```
+![Imagen Hosts](img/mishosts.PNG)
+
+Algo muy cómodo sería usar el comando SSH y que se conectara automáticamente sin necesidad de tener que poner la contraseña. Eso es precisamente lo que haremos.
 Lo primero es revisar si en algún momento ya hemos generado una clave.
 ```bash
 ...$ cat .ssh/id_rsa.pub 
 ```
-Si tenemos un output que empieza por **ssh-rsa** significa que en algún momento ya generamos esa clave y no es necesario hacer otra. Si por el contrario obtenemos un error, debemos generar una clave ssh.
+Si tenemos un output que empieza por **ssh-rsa** significa que en algún momento ya generamos esa clave y no es necesario hacer otra. Si por el contrario obtenemos un error, debemos generar una clave ssh. En mi caso ya la había generado con anterioridad.
+![Imagen SSH key](img/id_rsa.PNG)
+
 Para generar la clave ejecutamos el siguiente comando: 
 ```bash
 ...$ ssh-keygen
@@ -73,6 +85,28 @@ Ahora solo falta pasar esta clave desde nuestra máquina local a la máquina de 
 ...$ ssh-copy-id usuario@10.6.131.65
 ```
 Ya tenemos nuestro "token de autentificación" en la máquina virtual y podemos iniciar una conexión SSH sin necesidad de poner la contraseña.
+
+Si queremos llevar un paso más allá nuestra comodidad podemos hacer que ni siquiera tengamos que poner el usuario al iniciar la conexión SSH.
+Vamos a editar el fichero **~/.ssh/config**. En caso de que no lo tengamos creado lo debemos crear.
+```bash
+...$ touch ~/.ssh/config //SOLO EN CASO DE NO TENERLO 
+...$ vi ~/.ssh/config
+
+//Debemos añadir lo siguiente 
+Host iaas-dsi44
+  Hostname iaas-dsi44
+  User usuario
+
+...$ cat ~/.ssh/config
+//Comprobamos que está todo correcto
+```
+En el campo *Host* ponemos el nombre por el que llamaremos a esa conexión. En **Hostname** ponemos la IP de la conexión pero como anteriormente, en el fichero /etc/hosts/ habiamos llamado "iaas-dsi44" a la IP podemos poner ese nombre. Ambas opciones son igualmente válidas.
+![Imagen SSH config](img/ssh_config.jpg)
+
+Ahora, cuando querramos hacer una conexión SSH solo debemos ejecutar:
+```bash
+...$ ssh iaas-dsi44
+```
 
 ### 3.2 Instalación Git y configuración
 
@@ -93,6 +127,8 @@ Verificamos que lo hemos puesto correctamente con:
 ```bash
 ...$ git config --list
 ```
+![Imagen Git config](img/git_conf.PNG)
+
 Ahora vamos a modificar el prompt de la terminal para que nos muestre en la rama actual en la que nos encontramos del repositorio. Para ello debemos descargarnos el script [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) (también podemos simplemente copiar el código del script y pegarlo en un fichero que creemos) en nuestra máquina del IaaS.
 Seguimos los siguientes pasos:
 ```bash
@@ -107,7 +143,10 @@ PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git 
 Comprobamos que está modificado correctamente y aplicamos los cambios.
 ```bash
 ...$ tail .bashrc
-//Debemos ver las dos lineas que acabamos de añadir al final
+//Debemos ver las dos lineas que acabamos de añadir al final, algo tal que así:
+...
+source ~/.git-prompt.sh
+PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
 
 ...$ exec bash -l
 ```
@@ -124,6 +163,7 @@ Ahora clonemos un repositorio para verificar que todo este correcto.
 ...$ git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
 ```
 Si accedemos al repositorio que acabamos de clonar deberiamos ver cómo cambia el prompt.
+![Imagen Cambio Prompt](img/comprueba_prompt.jpg)
 
 ### 3.2 Instalación Node Version Manager (nvm)
 Vamos a instalar nvm.
