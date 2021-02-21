@@ -23,7 +23,7 @@ Lo primero que haremos será conectarnos a la página web del [IaaS](iaas.ull.es
 Una vez entramos en la página, introducimos nuestras credenciales institucionales y se nos mostrará una intefaz con las máquinas que hemos creado o tenemos disponibles. Seleccionamos la que pone **DSI** y le damos a ejecutar. Cuando esté lista se nos agregará una máquina con un número de sufijo.
 Accedemos a ella y veremos una pantalla como la que se muestra a continuación.
 ![Imagen IaaS](img/iaas_UI.PNG)
-Aquí nos tenemos que fijar en la parte que pone **Direccion IP**. Esa será la dirección de nuestra máquina y la que usaremos para conectarnos.
+Aquí nos tenemos que fijar en la sección **Detalles** en la parte que pone **Direccion IP**. Esa será la dirección de nuestra máquina y la que usaremos para conectarnos.
 Abrimos una terminal y nos conectamos por SSH. Introducimos la dirección que tenga nuestra máquina.
 En mi caso es:
 ```bash
@@ -130,3 +130,39 @@ exec bash -l
 nvm --version
 ```
 El resultado del último comando nos debería decir que es la versión **0.37.2**
+Ahora vamos a instalar la versión **más reciente** de **Node.js**
+```bash
+$ nvm install node
+$ node --version
+
+$ npm --version
+```
+Si en lugar de la más reciente queremos instalar otra versión debemos hacer lo siguiente:
+```bash
+$ nvm install 12.0.0
+$ node --version
+$ npm --version
+```
+En nuestro caso hemos instalado la versión 12.0.0 pero podemos instalar cualquier otra versión disponible.
+Finalmente, si queremos cambiar de versión gracias al nvm lo que debemos hacer es:
+1. Listar las versiones que tenemos instaladas
+```bash
+nvm list
+```
+2. Seleccionar de la lista la que queremos usar actualmente. En nuestro caso pondremos la v15.8.0 
+```bash
+nvm use v15.8.0 
+```
+3. Comprobar que se ha seleccionado correctamente
+```bash
+$ nvm install 12.0.0
+$ node --version
+$ npm --version
+```
+## 4. Conclusión
+
+## 5. Recursos y Webgrafía
+**[Guión Práctica 1 DSI]()**: Guión de la asignatura donde detalla el desarrollo de la práctica 1.
+**[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)**: Guía de Github sobre Markdown.
+**[VincentTam _config.yml on Github](https://github.com/daattali/beautiful-jekyll/blob/master/_config.yml)**: Archivo _config.yml con explicaciones de los parámetros para entender mejor que contiene el fichero.
+**[Servicio VPN ULL](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/)**: Web de la Universidad de La Laguna donde se explica como acceder a la VPN de la institución.
