@@ -1,6 +1,5 @@
 # Práctica 1 - Configuración de máquina virtual en el IaaS
-* Universidad de La Laguna
-* Eduardo Da Silva Yanes 
+* Elaborado por Eduardo Da Silva Yanes
 
 ## Nota aclaratoria
 Durante el informe vamos a ver textos e instrucciones que corresponden a comandos de consola. Los comandos que deben ser introducidos en consola van precedidos de **...$** haciendo referencia al prompt. Los comentarios aclarativos tienen, al igual que muchos lenguajes de programación, **//** antes del comentario. Finalmente, si hay un texto sin ninguna de estas cosas debe ser interpretado como eso, un texto, que puede debe ser escrito o leido según corresponda.
@@ -217,9 +216,12 @@ nvm use v15.8.0
 ![Imagen Listado nvm](img/list_nvm.jpg)
 
 ## 4. Conclusión
+En cuanto a la realización de la tarea he de decir que ha sido bastante rápida y sencilla ya que, al ser una práctica de introducción, no conlleva gran complejidad. No he tenido ningún inconveniente durante el proceso y, es más, me he divertido realizando este informe.
+
 De manera general este tipo de prácticas son muy **útiles** ya que nos permite establecer un **entorno de trabajo estandar para todos los alumnos** de tal manera que todos podamos trabajar en las mismas condiciones y evitar errores o contratiempos. Además nos sirve como punto de partida para saber qué necesitamos para la asignatura y nos da pie a trabajar, en caso de que no lo hayamos hecho antes, con VPN, git, Github, conexiónes remotas, etc.
 
 Así mismo, como **futuros ingenieros informáticos**, aprender a tener un entorno de trabajo **cómodo** y **óptimo** para desarrollar nuestras labor es álgo fundamental.
+
 ## 5. Recursos y Webgrafía
 * **[Guión Práctica 1 DSI](https://ull-esit-inf-dsi-2021.github.io/prct01-iaas/)**: Guión de la asignatura donde detalla el desarrollo de la práctica 1.
 * **[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)**: Guía de Github sobre Markdown.
