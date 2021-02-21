@@ -1,8 +1,6 @@
 # Práctica 1 - Configuración de máquina virtual en el IaaS
 * Universidad de La Laguna
 * Eduardo Da Silva Yanes 
-TESTEO
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 ## 1. Introduccion
 En esta primera práctica de la asignatura de Desarrollo de Sistemas Informáticos debemos configurar nuestra máquina virtual alojada en el IaaS con la que haremos las prácticas. Configuraremos tanto en entorno de la máquina, instalando y configurando git y Node.js y la conexión ssh.
@@ -157,12 +155,15 @@ nvm use v15.8.0
 ```
 3. Comprobar que se ha seleccionado correctamente
 ```bash
-$ nvm install 12.0.0
-$ node --version
-$ npm --version
+...$ nvm install 12.0.0
+...$ node --version
+...$ npm --version
 ```
-## 4. Conclusión
 
+## 4. Conclusión
+De manera general este tipo de prácticas son muy **útiles** ya que nos permite establecer un **entorno de trabajo estandar para todos los alumnos** de tal manera que todos podamos trabajar en las mismas condiciones y evitar errores o contratiempos. Además nos sirve como punto de partida para saber qué necesitamos para la asignatura y nos da pie a trabajar, en caso de que no lo hayamos hecho antes, con VPN, git, Github, conexiónes remotas, etc.
+
+Así mismo, como **futuros ingenieros informáticos**, aprender a tener un entorno de trabajo **cómodo** y **óptimo** para desarrollar nuestras labor es álgo fundamental.
 ## 5. Recursos y Webgrafía
 * **[Guión Práctica 1 DSI]()**: Guión de la asignatura donde detalla el desarrollo de la práctica 1.
 * **[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)**: Guía de Github sobre Markdown.
