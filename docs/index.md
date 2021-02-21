@@ -23,6 +23,7 @@ También será necesario tener una cuenta de Github ya que será donde volcaremo
 
 ## 3. Desarrollo de la práctica
 
+
 ### 3.1 Conectándose por primera vez al IaaS
 Lo primero que haremos será conectarnos a la página web del [IaaS](iaas.ull.es). Recordemos que es necesario tener configurada la VPN para establecer conexión tanto con la web como con nuestra máquina. En caso de no haberlo hecho revise el apartado de **Requisitos previos**.
 Una vez entramos en la página, introducimos nuestras credenciales institucionales y se nos mostrará una intefaz con las máquinas que hemos creado o tenemos disponibles. Seleccionamos la que pone **DSI** y le damos a ejecutar. Cuando esté lista se nos agregará una máquina con un número de sufijo.
@@ -110,6 +111,7 @@ Ahora, cuando querramos hacer una conexión SSH, solo debemos ejecutar:
 ...$ ssh iaas-dsi44
 ```
 
+
 ### 3.2 Instalación Git y configuración
 
 Antes de comenzar con Git vamos a generar una clave pública-privada en nuestra VM del IaaS. Lo haremos siguiendo los pasos anteriores pero sin pasar la clavea ninguna máquina más. Una vez generamos la key no hacemos nada más.
@@ -168,6 +170,7 @@ Ahora clonemos un repositorio para verificar que todo este correcto.
 ```
 Si accedemos al repositorio que acabamos de clonar deberiamos ver cómo cambia el prompt.
 ![Imagen Cambio Prompt](img/comprueba_prompt.jpg)
+
 
 ### 3.3 Instalación Node Version Manager (nvm) y Node.js
 Vamos a instalar nvm.
