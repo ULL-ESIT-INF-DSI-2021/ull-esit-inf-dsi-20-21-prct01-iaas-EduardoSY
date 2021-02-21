@@ -161,6 +161,8 @@ Para ello lo primero es copiarla del fichero **id_rsa.pub**.
 ...$ cat ~/.ssh/id_rsa.pub
 ```
 Copiamos la salida y abrimos nuestra cuenta de Github. Accedemos a **configuración** y accedemos al apartado de **SSH and GPG keys**. Ahí debemos darle a **"New SSH key"** y pegamos nuestra clave.
+![Imagen Github](img/github_key.jpg)
+
 Ahora clonemos un repositorio para verificar que todo este correcto.
 ```bash
 ...$ git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
