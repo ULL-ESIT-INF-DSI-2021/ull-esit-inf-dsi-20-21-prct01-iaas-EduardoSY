@@ -2,9 +2,3 @@ title: "Desarrollo de Sistemas Informáticos - Grado en Ingeniería Informática
 description: "Práctica 01 - Configuración de máquina virtual en el IaaS"
 autor: Eduardo Da Silva Yanes
 theme: jekyll-theme-midnight
-font:
-  enable: true
-  host: //fonts.googleapis.com
-  headings:
-    external: true
-    family: Lato
