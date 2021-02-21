@@ -41,17 +41,13 @@ En mi caso es:
 Es la primera vez que nos conectamos asi que nos aparecerá un mensaje al que debemos responder afirmativamente. Las credenciales están por defecto asi que nuestra contraseña es "usuario". 
 Una vez hemos establecido conexión el sistema nos obliga a establecer una contraseña nueva. Ponemos la que queramos. (Primero se nos pide poner la contraseña actual (por defecto) y luego la nueva que queremos poner dos veces.)
 
-*** IMAGEN ***
-
 Lo siguiente que hacemos es personalizar un poco el nombre de la máquina. En lugar de que nos salga "Ubuntu" en el prompt, vamos a hacer que se muestre el nombre de nuestra máquina. En mi caso pondré **iaas-dsi44** ya que mi máquina es la numero 44.
 Para hacer este cambio modificamos el fichero _**/etc/hostname**_ y sustituimos el nombre "Ubuntu" por "iaas-dsi44"
 ```bash
 ...$ sudo vim /etc/hostname
 ```
 También vamos a cambiar el nombre de host de "Ubuntu" por iaas-dsi44. Para ello modificamos el fichero _**/etc/hosts**_. Simplemente sustituimos el nombre de "Ubuntu" por el de iaas-dsi44.
-
 ![Imagen Cambios realizados en ubuntu](img/cambios_ubuntu.jpg)
-
 
 Como podemos observar parece que no ha habido ningún cambio. Para que las modificaciones que hemos hecho tengan efecto debemos reiniciar el sistema. Pero antes de eso vamos a aprovechar a actualizar y poner todo al día.
 
@@ -63,7 +59,6 @@ Una vez finalizados podemos reiniciar
 ```bash
 ...$ sudo reboot
 ```
-
 
 Ahora vamos a dejar de lado momentaneamente la VM del IaaS para trabajar en nuestro PC local. Es posible que alguna vez nos se nos olvide o dudemos en cual era la ip de nuestra máquina virtual. Para evitar tener que recordarla podemos añadirla al fichero **/etc/hosts**.
 ```bash
