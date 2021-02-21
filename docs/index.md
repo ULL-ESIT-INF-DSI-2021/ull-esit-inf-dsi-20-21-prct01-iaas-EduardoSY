@@ -29,7 +29,7 @@ En mi caso es:
 ```bash
 ssh usuario@10.6.131.65
 ```
-*** IMAGEN ***
+![Imagen Primer ssh](img/ssh.jpg)
 Es la primera vez que nos conectamos asi que nos aparecerá un mensaje al que debemos responder afirmativamente. Las credenciales están por defecto asi que nuestra contraseña es "usuario". 
 Una vez hemos establecido conexión el sistema nos obliga a establecer una contraseña nueva. Ponemos la que queramos. (Primero se nos pide poner la contraseña actual (por defecto) y luego la nueva que queremos poner dos veces.)
 
@@ -41,6 +41,9 @@ Para hacer este cambio modificamos el fichero _**/etc/hostname**_ y sustituimos 
 sudo vim /etc/hostname
 ```
 También vamos a cambiar el nombre de host de "Ubuntu" por iaas-dsi44. Para ello modificamos el fichero _**/etc/hosts**_. Simplemente sustituimos el nombre de "Ubuntu" por el de iaas-dsi44.
+
+![Imagen Cambios realizados en ubuntu](img/cambios_ubuntu.jpg)
+
 
 Como podemos observar parece que no ha habido ningún cambio. Para que las modificaciones que hemos hecho tengan efecto debemos reiniciar el sistema. Pero antes de eso vamos a aprovechar a actualizar y poner todo al día.
 
