@@ -10,7 +10,7 @@ ESTO CORRESPONDE A TEXTO DE ENTRADA O SALIDA (Depende del contexto)
 ```
 
 ## 1. Introduccion
-En esta primera práctica de la asignatura de Desarrollo de Sistemas Informáticos debemos configurar nuestra máquina virtual alojada en el IaaS con la que haremos las prácticas. Configuraremos tanto en entorno de la máquina, instalando y configurando git y Node.js y la conexión ssh.
+En esta primera práctica de la asignatura de Desarrollo de Sistemas Informáticos debemos configurar nuestra máquina virtual alojada en el IaaS con la que haremos las prácticas. Configuraremos tanto en entorno de la máquina, instalando y configurando git y Node.js y la conexión ssh como en entorno local, haciendo que nuestra conexión sea lo más sencilla posible.
 ### Objetivos
 1. Configurar nuestra máquina virtual del IaaS
 2. Configurar nuestra conexión SSH con la máquina del IaaS
